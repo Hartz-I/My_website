@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BlogStar Photo viewer</title>
+
+		<link rel="stylesheet"
+			type="text/css"
+			href="css/bootstrap.css"
+			/>
+
+		<link rel="stylesheet"
+			type="text/css"
+			href="css/styles.css"
+			/>
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/handlebars-v4.7.6.js"></script>
+
+		<script type="text/javascript" src="content/data.js"></script>
+		<script type="text/javascript" src="js/code.js"></script>
+	</head>
+	<body>
+		<div class="navigation">
+			<nav class="navbar navbar-default fixed-top">
+		    	<!--Start Container-->
+				<div class="container-fluid">
+
+					<!--Start Collapsed navbar-->
+					<div class="navbar-header">
+						<button
+							type="button"
+							class="navbar-toggle collapsed"
+							data-toggle="collapse"
+							data-target="#main_navbar"
+							aria-expanded="false">Menu</button>
+
+							<a class="navbar-brand" href="index.html">
+				      			<img style="max-width:50px; margin-top: -15px;" src="content/images/logo.png" />
+				      		</a>
+				      		<a class="navbar-brand" href="index.html">
+				      			BlogStar
+				      		</a>
+					</div><!--/ Collapsed navbar-->
+
+					<!--Start Un-Collapsed navbar-->
+					<div class="collapse navbar-collapse"
+						id="main_navbar">
+			    		<ul class="nav navbar-nav">
+				    		<li class="active">
+								<a href="#" id="home_tab">
+									Home
+								</a>
+							</li>
+							<li>
+								<a href="#" id="usage_tab">
+									Usage
+								</a>
+							</li>
+							<li>
+								<a href="#" id="gallery_tab">
+									Gallery
+								</a>
+							</li>
+
+							<li>
+								<a href="#" id="contact_tab">
+									Contact
+								</a>
+							</li>
+							
+			    		</ul>
+			    	</div><!--/ Un-Collapsed navbar-->
+
+		    	</div><!--/ Container-->
+		    </nav><!--/ navbar -->
+		</div>
+
+		<div class="container-fluid" id="content">
+
+		</div>
+	</body>
+
+	<script type="text/x-handlebars-template" id="big_view">
+		
+		<div>
+			<img src="{{src}}" style="width:80%">
+
+			<div class="author">
+				<h1>{{name}}</h1>
+				<h3>{{blogintro}}</h3>
+			</div>
+		</div>
+
+	</script>
+
+	<script type="text/javascript">
+		function setTemplate(template_name, data){
+			var html=template_name(data)
+
+			$("#content").html(html)
+		}
+
+		var image_template=Handlebars.compile(source)
+
+		setTemplate(image_template, data_gallery[0])
+
+	</script>
+</html>

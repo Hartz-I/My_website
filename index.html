@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BlogStar</title>
+
+		<link rel="stylesheet"
+			type="text/css"
+			href="css/bootstrap.css"
+			/>
+
+		<link rel="stylesheet"
+			type="text/css"
+			href="css/styles.css"
+			/>
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/handlebars-v4.7.6.js"></script>
+
+		<script type="text/javascript" src="content/data.js"></script>
+		<script type="text/javascript" src="js/code.js"></script>
+	</head>
+
+	<body>
+		<div class="navigation">
+			<nav class="navbar navbar-default fixed-top">
+		    	<!--Start Container-->
+				<div class="container-fluid">
+
+					<!--Start Collapsed navbar-->
+					<div class="navbar-header">
+						<button
+							type="button"
+							class="navbar-toggle collapsed"
+							data-toggle="collapse"
+							data-target="#main_navbar"
+							aria-expanded="false">Menu</button>
+
+							<a class="navbar-brand" href="index.html">
+				      			<img style="max-width:50px; margin-top: -15px;" src="content/images/logo.png" />
+				      		</a>
+				      		<a class="navbar-brand" href="index.html">
+				      			BlogStar
+				      		</a>
+					</div><!--/ Collapsed navbar-->
+
+					<!--Start Un-Collapsed navbar-->
+					<div class="collapse navbar-collapse"
+						id="main_navbar">
+			    		<ul class="nav navbar-nav">
+				    		<li class="active">
+								<a href="#" id="home_tab">
+									Home
+								</a>
+							</li>
+							<li>
+								<a href="#" id="usage_tab">
+									Usage
+								</a>
+							</li>
+							<li>
+								<a href="#" id="gallery_tab">
+									Gallery
+								</a>
+							</li>
+
+							<li>
+								<a href="#" id="contact_tab">
+									Contact
+								</a>
+							</li>
+							
+			    		</ul>
+			    	</div><!--/ Un-Collapsed navbar-->
+
+		    	</div><!--/ Container-->
+		    </nav><!--/ navbar -->
+		</div>
+
+	    <div id="block_1" class="blue_v">
+
+	    </div>
+
+	    <div id="block_2" class="white_v">
+
+	    </div>
+
+	    <div id="block_3" class="blue_v">
+
+	    </div>
+
+	    <div id="block_4" class="contact">
+
+	    </div>
+	</body>
+
+	<script type="text/x-handlebars-template" id="showcase_view">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					
+					<h1 class="title" style="margin-top:20%">{{title}}</h1>
+					<h2 class="description">{{description}}</h2>
+					
+				</div>
+
+				<div class="col-md-6">
+					<img src="{{src}}" style="max-width:100%" />
+				</div>
+
+				<button id="go_button" type="button" class="btn btn-primary">Get Started!</button>
+			</div>
+
+		</div>		
+	</script>
+
+
+	<script type="text/x-handlebars-template" id="usage_view">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					
+					<b><h1 class="title" style="margin-top:20%">{{title}}</h1></b>
+					<h3 class="description">{{description}}</h3>
+					
+				</div>
+
+				<div class="col-md-6">
+					<img src="{{src}}" style="width:100%;" />
+				</div>
+			</div>
+
+		</div>		
+	</script>
+
+	<script type="text/x-handlebars-template" id="gallery_view">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					
+					<b><h1 class="title" style="margin-top:20%">{{title}}</h1></b>
+					<h3 class="description">{{description}}</h3>
+					
+				</div>
+
+				{{#each photos}}
+				<div class="col-xs-6 col-sm-4 col-md-3">
+					<div class="thumbnail" id="wrapper">
+
+					    <div id="img-container">
+					        <a href="photo_viewer.html">
+						        <input type="submit" value="{{name}}" id="btn" />
+						        <img src="{{src}}" id="image_id"/>
+						    </a>
+					    </div>
+						
+					</div>
+				</div>
+				{{/each}}
+			</div>
+
+		</div>		
+	</script>
+
+	<script type="text/x-handlebars-template" id="contact_view">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					
+					<b><h1 class="title" style="margin-top:20%">{{name}}</h1></b>
+					<h3 class="description">{{email}}</h3>
+					<h3 class="description">-{{uni}}</h3>
+					
+				</div>
+
+				<div class="col-md-6">
+					<img src="{{src}}" style="width:100%" />
+				</div>
+			</div>
+			<br/>
+			<br/>
+
+		</div>		
+	</script>
+
+		
+</html>

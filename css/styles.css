@@ -1,0 +1,89 @@
+body{
+	background: white;
+	height: 110%;
+}
+
+.navigation {
+   /* fixed keyword is fine too */
+   position: sticky;
+   top: 0;
+   z-index: 100;
+   /* z-index works pretty much like a layer:
+   the higher the z-index value, the greater
+   it will allow the navigation tag to stay on top
+   of other tags */
+}
+
+.blue_v{
+	color:white;
+	background: indigo;
+
+	height: 100%;
+}
+
+
+.white_v{
+	color:indigo;
+	background: #F8F8FF;
+
+	height:120%;
+}
+
+.side_image{
+	background: green;
+	width: 100%;
+}
+
+#go_button{
+	margin-top: -20%;
+	margin-right: 50%;
+}
+
+.thumbnail{
+	background: #F8F8FF;
+	color:black;
+	height:300px;
+}
+.name{
+	margin-left:20px; 
+}
+
+.blogintro{
+	margin-left:25px; 
+}
+
+.contact{
+	color:white;
+	background: #787878;
+	margin-top: 21px;
+	margin-bottom: 50px;
+
+	height: 100%;
+}
+
+#img-container {
+    height:100%;
+    overflow:hidden;
+    vertical-align:middle;
+    text-align:center;
+}
+#img-container img {
+    width:100%;
+    height:100%;
+    transition:all 2s ease-in-out;
+    margin-top: -25px;
+}
+#img-container:hover img {
+    -webkit-transform: scale(1.2, 1.2);
+}
+#btn {
+    opacity:0;
+    display:inline;
+    transition:all 1s ease-in-out;
+    position:relative;
+    top:50%;
+    z-index:10;
+}
+#img-container:hover #btn {
+    opacity:1;
+}
